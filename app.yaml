@@ -1,0 +1,14 @@
+name: forsight-app
+services:
+  - name: web
+    project: .
+    docker:
+      path: Dockerfile
+    env:
+      - name: DATA_ROOT
+        value: /mnt/data
+      - name: LOG_LEVEL
+        value: INFO
+    routes:
+      - path: /
+        port: 8501
