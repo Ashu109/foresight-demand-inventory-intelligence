@@ -1,0 +1,2 @@
+source,first_sales_date,last_sales_date,all_skus,eligible_skus,excluded_skus_below_min_active_days,min_active_sales_days,warmup_days_excluded_per_sku,feature_rows,promotion_data_available,inventory_data_available
+data/processed/clean_sales_transactions.csv,2009-12-01,2011-12-09,4813,3301,1512,30,28,1952558,false,false
