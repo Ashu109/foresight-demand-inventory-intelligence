@@ -1,0 +1,3 @@
+level,model,observations,mae,rmse,wmape
+overall,xgboost,92282,8.4230,52.4917,1.1453
+overall,lightgbm,92282,8.1328,52.1658,1.1059

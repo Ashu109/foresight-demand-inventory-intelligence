@@ -1,0 +1,6 @@
+Invoice,StockCode,Description,Quantity,InvoiceDate,Price,Customer ID,Country,rejection_reason
+A506401,B,Adjust bad debt,1,40297.566666666666,-53594.36,,United Kingdom,invalid_unit_price
+A516228,B,Adjust bad debt,1,40378.474999999999,-44031.79,,United Kingdom,invalid_unit_price
+A528059,B,Adjust bad debt,1,40471.50277777778,-38925.870000000003,,United Kingdom,invalid_unit_price
+A563186,B,Adjust bad debt,1,40767.618750000001,-11062.06,,United Kingdom,invalid_unit_price
+A563187,B,Adjust bad debt,1,40767.619444444441,-11062.06,,United Kingdom,invalid_unit_price
