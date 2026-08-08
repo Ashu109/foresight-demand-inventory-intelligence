@@ -1,6 +1,0 @@
-app:
-  name: Forsight
-  env: production
-
-logging:
-  level: INFO
