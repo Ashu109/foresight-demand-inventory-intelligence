@@ -1,7 +1,0 @@
-model_family,model,observations,mae,rmse,wmape
-deep_learning,lstm,89505,6.7783,54.2800,0.9272
-deep_learning,gru,89505,6.7641,54.1742,0.9253
-baseline,naive_lag_1,89505,9.4542,72.4305,1.2932
-baseline,moving_average_7,89505,7.9584,54.7934,1.0886
-baseline,seasonal_naive_lag_7,89505,8.5104,70.6137,1.1641
-baseline,weekday_seasonal_mean,89505,7.6360,53.6748,1.0445
