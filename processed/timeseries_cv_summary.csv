@@ -1,0 +1,5 @@
+candidate,folds,mean_mae,mean_rmse,mean_wmape
+smoothed_history,3,7.2729,36.1617,1.1345
+balanced_history,3,7.3490,37.2318,1.1458
+seasonal_history,3,7.4548,39.1759,1.1620
+recent_demand,3,7.4923,38.2509,1.1675

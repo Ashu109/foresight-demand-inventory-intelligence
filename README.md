@@ -1,73 +1,18 @@
-# FORESIGHT: Demand & Inventory Intelligence
+# Data directory
 
-FORESIGHT is a production-oriented decision intelligence application for forecasting demand, prioritizing replenishment actions, and monitoring forecast and inventory health.
+## Selected dataset
 
-## What it does
+`raw/online_retail_II.xlsx` is the UCI Online Retail II transactional dataset. It is the Day 1 source for demand analysis because it provides invoice-level retail sales across a large set of SKUs and countries.
 
-- Runs a Streamlit dashboard for executive decision-making
-- Loads processed forecast and replenishment outputs from the `data/processed` folder
-- Supports modular architecture for data, ML, optimization, UI, and monitoring components
-- Includes Docker, CI/CD, cloud deployment, and monitoring scaffolding
+The workbook contains two chronological sheets and 1,067,371 data rows in total:
 
-## Project structure
+| Sheet | Transaction rows |
+| --- | ---: |
+| `Year 2009-2010` | 525,461 |
+| `Year 2010-2011` | 541,910 |
 
-- `app.py` — Streamlit entry point
-- `dashboard/` — dashboard data access and UI helpers
-- `modules/` — modular package stubs for data, ML, optimization, and UI layers
-- `monitoring/` — Prometheus/Grafana starter configuration and metrics helpers
-- `scripts/` — validation, load testing, and pipeline utilities
-- `tests/` — smoke tests, configuration tests, validation tests, and monitoring tests
+Keep this file immutable. Derived, cleaned, and model-ready datasets should be written to `data/interim/` and `data/processed/` (both excluded from version control when they become large).
 
-## Quick start
+## Important scope note
 
-### Local Python environment
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-### Docker
-
-```powershell
-docker build -t forsight-dashboard:local .
-docker run --rm -p 8501:8501 -v "${PWD}\data:/app/data:ro" forsight-dashboard:local
-```
-
-### Validation and QA
-
-```powershell
-python scripts/validate_forecast_pipeline.py
-python scripts/load_test_dashboard.py
-python -m pytest
-python scripts/run_quality_checks.py
-```
-
-## Monitoring
-
-A simple monitoring stack is included under `monitoring/`:
-
-- Prometheus config: `monitoring/prometheus.yml`
-- Grafana/Prometheus compose file: `monitoring/docker-compose.monitoring.yml`
-- Metrics helpers: `monitoring/metrics.py`
-
-## Deployment notes
-
-Environment variables and deployment scaffolding are available in:
-
-- `.env.example`
-- `DEPLOYMENT.md`
-- `app.yaml`
-
-## Architecture overview
-
-```mermaid
-flowchart LR
-    A[Raw Data] --> B[Data Processing]
-    B --> C[Forecast Models]
-    C --> D[Replenishment Optimization]
-    D --> E[Streamlit Dashboard]
-    E --> F[Monitoring / Alerts]
-```
+This is a sales-transactions dataset, not an inventory ledger. It contains sales quantity and unit price, but **not** on-hand stock, replenishment orders, supplier lead time, or product categories. Inventory KPIs therefore require a supplementary inventory/replenishment extract and a SKU-category master. See [`../docs/day1_data_foundation.md`](../docs/day1_data_foundation.md) for the field mapping and KPI definitions.
