@@ -1,0 +1,109 @@
+{
+  "checkpoint": "week_2_day_14",
+  "status": "complete",
+  "forecasting_pipeline": {
+    "status": "complete",
+    "validation_rows": 89505,
+    "sku_champions": 3199
+  },
+  "forecast_accuracy": {
+    "status": "validated",
+    "selection_metric": "wmape",
+    "best_model": {
+      "scope": "overall",
+      "model_family": "deep_learning",
+      "model": "gru",
+      "observations": "89505",
+      "mae": "6.7641",
+      "rmse": "54.1742",
+      "wmape": "0.9253"
+    },
+    "models_compared": [
+      {
+        "scope": "overall",
+        "model_family": "deep_learning",
+        "model": "gru",
+        "observations": "89505",
+        "mae": "6.7641",
+        "rmse": "54.1742",
+        "wmape": "0.9253"
+      },
+      {
+        "scope": "overall",
+        "model_family": "deep_learning",
+        "model": "lstm",
+        "observations": "89505",
+        "mae": "6.7783",
+        "rmse": "54.2800",
+        "wmape": "0.9272"
+      },
+      {
+        "scope": "overall",
+        "model_family": "statistical",
+        "model": "weekday_seasonal_mean",
+        "observations": "89505",
+        "mae": "7.6360",
+        "rmse": "53.6748",
+        "wmape": "1.0445"
+      },
+      {
+        "scope": "overall",
+        "model_family": "statistical",
+        "model": "moving_average_7",
+        "observations": "89505",
+        "mae": "7.9584",
+        "rmse": "54.7934",
+        "wmape": "1.0886"
+      },
+      {
+        "scope": "overall",
+        "model_family": "machine_learning",
+        "model": "lightgbm",
+        "observations": "89505",
+        "mae": "8.0798",
+        "rmse": "52.5062",
+        "wmape": "1.1052"
+      },
+      {
+        "scope": "overall",
+        "model_family": "machine_learning",
+        "model": "xgboost",
+        "observations": "89505",
+        "mae": "8.3831",
+        "rmse": "52.8454",
+        "wmape": "1.1467"
+      },
+      {
+        "scope": "overall",
+        "model_family": "statistical",
+        "model": "seasonal_naive_lag_7",
+        "observations": "89505",
+        "mae": "8.5104",
+        "rmse": "70.6137",
+        "wmape": "1.1641"
+      },
+      {
+        "scope": "overall",
+        "model_family": "statistical",
+        "model": "naive_lag_1",
+        "observations": "89505",
+        "mae": "9.4542",
+        "rmse": "72.4305",
+        "wmape": "1.2932"
+      }
+    ],
+    "negative_value_violations": 0
+  },
+  "inventory_optimization_engine": {
+    "status": "complete",
+    "method": "safety stock + reorder point + lead-time review target"
+  },
+  "sku_recommendations": {
+    "path": "data/processed/week2_sku_recommendations.csv",
+    "sku_count": 3204,
+    "status_counts": {
+      "no_order_required": 1052,
+      "reorder_now": 2152
+    }
+  }
+}
