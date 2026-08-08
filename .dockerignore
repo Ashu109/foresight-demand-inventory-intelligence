@@ -1,0 +1,10 @@
+.venv
+__pycache__
+*.pyc
+.git
+docs
+data/raw
+data/*.zip
+.env
+*.pkl
+*.h5
