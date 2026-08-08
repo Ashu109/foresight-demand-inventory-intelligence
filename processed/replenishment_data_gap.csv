@@ -1,0 +1,2 @@
+status,reason,expected_path,required_columns,action
+blocked,inventory_snapshot_missing_or_empty,data\raw\inventory_snapshot.csv,date;inventory_value;location_id;on_hand_quantity;sku_id,"Populate data/raw/inventory_snapshot.csv from ERP/WMS, including supplier lead_time_days when available, then rerun Day 13."
